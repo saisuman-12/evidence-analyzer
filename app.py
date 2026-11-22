@@ -319,10 +319,14 @@ def find_keywords(text):
 
 @app.route("/")
 def serve_frontend():
-
-    return send_from_directory(
+    for folder in (
         FRONTEND_FOLDER,
-        "index.html"
+        os.path.dirname(os.path.abspath(__file__)),
+        os.getcwd(),
+    ):
+        if os.path.isfile(os.path.join(folder, "index.html")):
+            return send_from_directory(folder, "index.html")
+    return "index.html not found", 404
     )
 
 
