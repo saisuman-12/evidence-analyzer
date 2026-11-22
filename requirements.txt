@@ -1,0 +1,10 @@
+flask
+gunicorn
+joblib
+scikit-learn
+numpy
+opencv-python-headless
+pytesseract
+pypdf
+reportlab
+werkzeug
