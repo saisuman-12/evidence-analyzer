@@ -1,0 +1,830 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>AI Smart Evidence Analyzer</title>
+
+    <link rel="stylesheet" href="/style.css">
+
+</head>
+
+
+<body>
+
+
+<div class="app">
+
+
+    <!-- =====================================================
+         SIDEBAR
+         ===================================================== -->
+
+    <aside class="sidebar">
+
+        <div class="logo">
+
+            <div class="logo-icon">
+                AI
+            </div>
+
+            <div>
+
+                <h2>
+                    EvidenceAI
+                </h2>
+
+                <span>
+                    Investigation Platform
+                </span>
+
+            </div>
+
+        </div>
+
+
+        <nav>
+
+            <a href="#" class="nav-item active">
+                <span>⌂</span>
+                Dashboard
+            </a>
+
+            <a href="#" class="nav-item">
+                <span>＋</span>
+                New Case
+            </a>
+
+            <a href="#" class="nav-item">
+                <span>◈</span>
+                Evidence
+            </a>
+
+            <a href="#" class="nav-item">
+                <span>⌕</span>
+                Analysis
+            </a>
+
+            <a href="#" class="nav-item">
+                <span>▣</span>
+                Reports
+            </a>
+
+        </nav>
+
+
+        <div class="sidebar-bottom">
+
+            <a href="#" class="nav-item">
+                <span>⚙</span>
+                Settings
+            </a>
+
+        </div>
+
+    </aside>
+
+
+
+    <!-- =====================================================
+         MAIN CONTENT
+         ===================================================== -->
+
+    <main class="main-content">
+
+
+        <!-- ================= TOP BAR ================= -->
+
+        <header class="topbar">
+
+            <div>
+
+                <h1>
+                    Dashboard
+                </h1>
+
+                <p>
+                    AI-powered cybercrime and fraud evidence analysis
+                </p>
+
+            </div>
+
+
+            <button
+                class="new-case-btn"
+                id="newCaseButton">
+
+                + New Case
+
+            </button>
+
+        </header>
+
+
+
+        <!-- =================================================
+             STATISTICS
+             ================================================= -->
+
+        <section class="stats">
+
+
+            <div class="stat-card">
+
+                <div class="stat-icon">
+                    C
+                </div>
+
+                <div>
+
+                    <span>
+                        Total Cases
+                    </span>
+
+                    <h2 id="totalCases">
+                        0
+                    </h2>
+
+                </div>
+
+            </div>
+
+
+
+            <div class="stat-card">
+
+                <div class="stat-icon">
+                    E
+                </div>
+
+                <div>
+
+                    <span>
+                        Evidence Uploaded
+                    </span>
+
+                    <h2 id="totalEvidence">
+                        0
+                    </h2>
+
+                </div>
+
+            </div>
+
+
+
+            <div class="stat-card">
+
+                <div class="stat-icon">
+                    R
+                </div>
+
+                <div>
+
+                    <span>
+                        Reports Generated
+                    </span>
+
+                    <h2 id="totalReports">
+                        0
+                    </h2>
+
+                </div>
+
+            </div>
+
+
+        </section>
+
+
+
+        <!-- =================================================
+             UPLOAD + ANALYSIS MODULES
+             ================================================= -->
+
+        <section class="dashboard-grid">
+
+
+            <!-- ================= UPLOAD PANEL ================= -->
+
+            <div class="panel">
+
+                <div class="panel-header">
+
+                    <h2>
+                        Start an Investigation
+                    </h2>
+
+                    <p>
+                        Upload digital evidence for automated analysis.
+                    </p>
+
+                </div>
+
+
+                <div class="upload-area">
+
+
+                    <div class="upload-icon">
+                        ↑
+                    </div>
+
+
+                    <h3>
+                        Upload Evidence
+                    </h3>
+
+
+                    <p>
+                        Email, URL, image, PDF or transaction data
+                    </p>
+
+
+                    <button
+                        class="upload-btn"
+                        id="uploadButton">
+
+                        Choose Evidence
+
+                    </button>
+
+
+                    <input
+                        type="file"
+                        id="evidenceFile"
+                        hidden
+                        accept=".txt,.eml,.pdf,.png,.jpg,.jpeg,.csv,.json"
+                    >
+
+
+                    <p
+                        id="selectedFile"
+                        class="selected-file">
+                    </p>
+
+
+                    <p
+                        id="currentCaseDisplay"
+                        class="selected-file">
+
+                        Current Case: CASE-001
+
+                    </p>
+
+
+                </div>
+
+            </div>
+
+
+
+            <!-- ================= ANALYSIS MODULES ================= -->
+
+            <div class="panel">
+
+                <div class="panel-header">
+
+                    <h2>
+                        Analysis Modules
+                    </h2>
+
+                    <p>
+                        Available evidence analyzers
+                    </p>
+
+                </div>
+
+
+                <div class="module-list">
+
+
+                    <!-- EMAIL -->
+
+                    <div class="module">
+
+                        <div class="module-icon">
+                            ✉
+                        </div>
+
+                        <div>
+
+                            <h3>
+                                Email Analysis
+                            </h3>
+
+                            <p>
+                                NLP & phishing detection
+                            </p>
+
+                        </div>
+
+                        <span class="status">
+                            Ready
+                        </span>
+
+                    </div>
+
+
+
+                    <!-- URL -->
+
+                    <div class="module">
+
+                        <div class="module-icon">
+                            ↗
+                        </div>
+
+                        <div>
+
+                            <h3>
+                                URL Analysis
+                            </h3>
+
+                            <p>
+                                URL feature analysis
+                            </p>
+
+                        </div>
+
+                        <span class="status">
+                            Ready
+                        </span>
+
+                    </div>
+
+
+
+                    <!-- IMAGE -->
+
+                    <div class="module">
+
+                        <div class="module-icon">
+                            ▧
+                        </div>
+
+                        <div>
+
+                            <h3>
+                                Image Analysis
+                            </h3>
+
+                            <p>
+                                OCR & suspicious text detection
+                            </p>
+
+                        </div>
+
+                        <span class="status">
+                            Ready
+                        </span>
+
+                    </div>
+
+
+                </div>
+
+            </div>
+
+
+        </section>
+
+
+
+
+        <!-- =================================================
+             LIVE ANALYZERS (Email / Message and URL)
+             The two analyzers are placed inside analyzersBody by script.js
+             ================================================= -->
+
+        <section class="analyzers-section" id="analysis">
+
+            <div class="analyzers-header">
+
+                <div>
+                    <h2>Live Analyzers</h2>
+                    <p>Check a suspicious message or link instantly.</p>
+                </div>
+
+                <div class="analyzer-tabs">
+                    <button type="button" class="analyzer-tab active" data-target="email">Email / Message</button>
+                    <button type="button" class="analyzer-tab" data-target="url">URL</button>
+                </div>
+
+            </div>
+
+            <div class="analyzers-body" id="analyzersBody"></div>
+
+        </section>
+
+        <!-- =================================================
+             AI ANALYSIS RESULT
+             
+             IMPORTANT:
+             This is OUTSIDE dashboard-grid.
+             ================================================= -->
+
+        <section
+            class="analysis-result-panel"
+            id="analysisResult">
+
+            <!-- ================= RESULT HEADER ================= -->
+
+            <div class="analysis-result-header">
+
+
+                <div>
+
+                    <span class="section-label">
+                        AI ANALYSIS
+                    </span>
+
+                    <h2>
+                        Evidence Analysis Result
+                    </h2>
+
+                    <p>
+                        Automated analysis of the uploaded evidence.
+                    </p>
+
+                </div>
+
+
+                <span
+                    class="prediction-badge"
+                    id="predictionBadge">
+
+                    Awaiting Analysis
+
+                </span>
+
+
+            </div>
+
+
+
+            <!-- ================= SUMMARY ================= -->
+
+            <div class="analysis-summary">
+
+
+                <!-- PREDICTION -->
+
+                <div class="analysis-stat">
+
+                    <span class="analysis-stat-label">
+                        Prediction
+                    </span>
+
+                    <strong id="resultPrediction">
+                        —
+                    </strong>
+
+                </div>
+
+
+
+                <!-- SUBJECT -->
+
+                <div class="analysis-stat">
+
+                    <span class="analysis-stat-label">
+                        Subject
+                    </span>
+
+                    <strong id="resultSubject">
+                        —
+                    </strong>
+
+                </div>
+
+
+
+                <!-- URL COUNT -->
+
+                <div class="analysis-stat">
+
+                    <span class="analysis-stat-label">
+                        URLs Found
+                    </span>
+
+                    <strong id="resultUrlCount">
+                        0
+                    </strong>
+
+                </div>
+
+
+
+                <!-- KEYWORDS -->
+
+                <div class="analysis-stat">
+
+                    <span class="analysis-stat-label">
+                        Suspicious Keywords
+                    </span>
+
+                    <strong id="resultKeywordCount">
+                        0
+                    </strong>
+
+                </div>
+
+
+            </div>
+
+
+
+            <!-- ================= RISK INDICATORS ================= -->
+
+            <div class="risk-indicators">
+
+
+                <h3>
+                    Detected Risk Indicators
+                </h3>
+
+
+                <div class="indicator-grid">
+
+
+                    <!-- CREDENTIAL -->
+
+                    <div
+                        class="risk-indicator"
+                        id="credentialIndicator">
+
+                        <div class="indicator-icon">
+                            ⚠
+                        </div>
+
+                        <div>
+
+                            <strong>
+                                Credential Request
+                            </strong>
+
+                            <span id="credentialStatus">
+                                Not Detected
+                            </span>
+
+                        </div>
+
+                    </div>
+
+
+
+                    <!-- PAYMENT -->
+
+                    <div
+                        class="risk-indicator"
+                        id="paymentIndicator">
+
+                        <div class="indicator-icon">
+                            ⚠
+                        </div>
+
+                        <div>
+
+                            <strong>
+                                Payment Request
+                            </strong>
+
+                            <span id="paymentStatus">
+                                Not Detected
+                            </span>
+
+                        </div>
+
+                    </div>
+
+
+
+                    <!-- URGENT -->
+
+                    <div
+                        class="risk-indicator"
+                        id="urgentIndicator">
+
+                        <div class="indicator-icon">
+                            ⚠
+                        </div>
+
+                        <div>
+
+                            <strong>
+                                Urgent Language
+                            </strong>
+
+                            <span id="urgentStatus">
+                                Not Detected
+                            </span>
+
+                        </div>
+
+                    </div>
+
+
+                </div>
+
+            </div>
+
+
+        </section>
+
+
+
+        <!-- =================================================
+             RECENT INVESTIGATIONS
+             ================================================= -->
+
+        <section class="panel recent-panel">
+
+
+            <div class="panel-header">
+
+                <h2>
+                    Recent Investigations
+                </h2>
+
+                <p>
+                    Cases stored in the investigation database
+                </p>
+
+            </div>
+
+
+            <div id="casesContainer">
+
+                <div class="empty-state">
+
+                    <div class="empty-icon">
+                        ◌
+                    </div>
+
+                    <h3>
+                        Loading cases...
+                    </h3>
+
+                </div>
+
+            </div>
+
+
+        </section>
+
+
+    </main>
+
+</div>
+
+
+
+<!-- =====================================================
+     NEW CASE MODAL
+     ===================================================== -->
+
+<div
+    class="modal"
+    id="caseModal">
+
+
+    <div class="modal-content">
+
+
+        <div class="modal-header">
+
+
+            <div>
+
+                <h2>
+                    Create New Case
+                </h2>
+
+                <p>
+                    Create an investigation case before uploading evidence.
+                </p>
+
+            </div>
+
+
+            <button
+                class="close-btn"
+                id="closeCaseModal">
+
+                ×
+
+            </button>
+
+        </div>
+
+
+
+        <form id="caseForm">
+
+
+            <!-- CASE TITLE -->
+
+            <div class="form-group">
+
+                <label for="caseTitle">
+                    Case Title
+                </label>
+
+                <input
+                    type="text"
+                    id="caseTitle"
+                    placeholder="Example: Online Shopping Fraud"
+                    required
+                >
+
+            </div>
+
+
+
+            <!-- DESCRIPTION -->
+
+            <div class="form-group">
+
+                <label for="caseDescription">
+                    Description
+                </label>
+
+                <textarea
+                    id="caseDescription"
+                    rows="4"
+                    placeholder="Describe the investigation..."
+                ></textarea>
+
+            </div>
+
+
+
+            <!-- INVESTIGATOR -->
+
+            <div class="form-group">
+
+                <label for="investigator">
+                    Team / Investigator
+                </label>
+
+                <input
+                    type="text"
+                    id="investigator"
+                    placeholder="Example: AIML Project Team"
+                >
+
+            </div>
+
+
+
+            <!-- BUTTONS -->
+
+            <div class="form-actions">
+
+
+                <button
+                    type="button"
+                    class="cancel-btn"
+                    id="cancelCaseButton">
+
+                    Cancel
+
+                </button>
+
+
+                <button
+                    type="submit"
+                    class="new-case-btn">
+
+                    Create Case
+
+                </button>
+
+
+            </div>
+
+
+        </form>
+
+
+    </div>
+
+</div>
+
+
+
+<!-- =====================================================
+     JAVASCRIPT
+     ===================================================== -->
+
+<script src="/script.js"></script>
+
+
+</body>
+
+</html>
