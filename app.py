@@ -327,7 +327,7 @@ def serve_frontend():
         if os.path.isfile(os.path.join(folder, "index.html")):
             return send_from_directory(folder, "index.html")
     return "index.html not found", 404
-    )
+    
 
 
 @app.route("/<path:filename>")
